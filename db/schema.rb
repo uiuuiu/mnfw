@@ -18,19 +18,19 @@ ActiveRecord::Schema.define(version: 2021_07_28_140754) do
   create_table "accounts", force: :cascade do |t|
     t.string "name"
     t.string "bank"
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_accounts_on_users_id"
+    t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
   create_table "transactions", force: :cascade do |t|
     t.decimal "amount"
     t.string "transaction_type"
-    t.bigint "accounts_id"
+    t.bigint "account_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["accounts_id"], name: "index_transactions_on_accounts_id"
+    t.index ["account_id"], name: "index_transactions_on_account_id"
   end
 
   create_table "users", force: :cascade do |t|

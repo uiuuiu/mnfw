@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'ffaker'
   gem 'rexml'
+  gem 'shoulda-matchers'
+  gem 'pry'
 end
 
 group :development do

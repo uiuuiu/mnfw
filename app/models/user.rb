@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum role: [:user, :admin]
+
+  has_many :accounts
+  has_many :transactions, through: :accounts
+  has_many :deposit_transactions, through: :accounts
+  has_many :withdraw_transactions, through: :accounts
 end
