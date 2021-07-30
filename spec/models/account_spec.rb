@@ -5,7 +5,7 @@ RSpec.describe Account, type: :model do
     User.create(email: 'dy.dev.test1@yopmail.com', password: '12345678')
   end
 
-  subject { Account.new(name: 'Pham Duy Dy', bank: 'Dy Bank', user_id: 1) }
+  subject { Account.new(name: 'Pham Duy Dy', bank: 'Dy Bank', user_id: User.last.id) }
 
   it "is valid with valid attributes" do
     expect(subject).to be_valid
