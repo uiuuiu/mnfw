@@ -13,6 +13,9 @@ class Admin::IndexService
     raise "#{klass} is not a model class" unless klass.is_a?(Class)
     raise "#{klass} is not a model" unless klass.superclass == ApplicationRecord
     opts[:columns] = klass.column_names if !opts[:columns] || opts[:columns].empty?
+    if @records.nil?
+      @records = klass.all 
+    end
     [records.page(page).per(limit), opts]
   end
 
