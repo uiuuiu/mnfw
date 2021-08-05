@@ -10,7 +10,7 @@ RSpec.describe "Admin::Accounts", type: :request do
     let(:account) { Account.last }
 
     it 'display accounts information' do
-      get "/admin/accounts"
+      get "/management/accounts"
 
       expect(response).to render_template(:index)
       expect(response.body).to include(account.id.to_s)
@@ -31,7 +31,7 @@ RSpec.describe "Admin::Accounts", type: :request do
     let(:account) { Account.last }
 
     it 'display accounts information' do
-      get "/admin/accounts/#{account.id}/edit"
+      get "/management/accounts/#{account.id}/edit"
 
       expect(response).to render_template(:edit)
       expect(response.body).to include(account.name)

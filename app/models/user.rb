@@ -4,8 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum role: [:user, :admin]
-
   has_many :accounts
   has_many :transactions, through: :accounts
   has_many :deposit_transactions, through: :accounts

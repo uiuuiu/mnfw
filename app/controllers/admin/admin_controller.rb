@@ -1,7 +1,6 @@
 module Admin
   class AdminController < ::ApplicationController
     before_action :authenticate_user!
-    # before_action :authenticate_user_role!
 
     private
 
@@ -21,10 +20,6 @@ module Admin
       raise 'None block given!' unless block_given?
       @record, @opts = yield
       render 'admin/templates/new'
-    end
-
-    def authenticate_user_role!
-      redirect_to '/' unless current_user.admin?
     end
 
     def redirect_to_back
