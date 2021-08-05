@@ -1,0 +1,4 @@
+.account-row
+  = account.name
+  span
+    = link_to 'Delete', admin_account_path(account.id), method: :delete
