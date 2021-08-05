@@ -6,10 +6,22 @@ class Admin::AccountsController < Admin::AdminController
     end
   end
 
+  def new
+    render_new do
+      Admin::NewService.call(current_user.accounts.new, editable_columns: [:name, :bank]).result
+    end
+  end
+
   def edit
     render_edit do
       Admin::EditService.call(@account, editable_columns: [:name, :bank]).result
     end
+  end
+
+  def create
+    account = current_user.accounts.create(permit_params)
+    flash[:errors] = account.errors.full_messages
+    redirect_to_back
   end
 
   def update

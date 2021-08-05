@@ -2,5 +2,5 @@
   - opts[:columns].each do |attr|
     = record[attr]
   span
-    = link_to 'Delete', action: :destroy, id: record.id
+    = link_to 'Delete', {action: :destroy, id: record.id}, method: :delete
     = link_to 'Edit', action: :edit, id: record.id
