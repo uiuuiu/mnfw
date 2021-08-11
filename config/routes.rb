@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
     resources :dashboard
     resources :accounts
+    resources :transactions
   end
 end

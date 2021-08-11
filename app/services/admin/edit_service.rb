@@ -7,11 +7,12 @@ class Admin::EditService
     @record = record
     @opts = opts
     @opts[:timestamps] ||= false
-    opts[:editable_columns] ||= []
+    @opts[:editable_columns] ||= []
+    @opts[:columns_data] ||= {}
   end
 
   def call
-    raise "#{record.class.superclass} is not a model" unless record.class.superclass == ApplicationRecord
+    raise "#{record.class.superclass} is not a model" unless record.class.ancestors.include?(ApplicationRecord)
     column_names = record.class.column_names
     column_names = column_names - TIMESTAMPS unless opts[:timestamps]
     opts[:columns] = column_names if !opts[:columns] || opts[:columns].empty?

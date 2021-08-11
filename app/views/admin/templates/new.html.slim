@@ -1,7 +1,9 @@
 ul
 - flash[:errors] && flash[:errors].each do |error|
   li = error
+- if flash[:success]
+  li = flash[:success]
 = form_for @record, url: {action: :create} do |f|
   - @opts[:edit_columns].each do |attr, editable|
-    = element_tag(f, @record, attr, editable)
+    = element_tag(f, @record, attr, {editable: editable, data: @opts[:columns_data]}, {include_blank: true})
   = f.submit 'Submit'

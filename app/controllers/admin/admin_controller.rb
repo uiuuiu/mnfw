@@ -23,7 +23,7 @@ module Admin
     end
 
     def redirect_to_back
-      redirect_back(fallback_location: admin_root_path)
+      redirect_back(fallback_location: dashboard_index_path)
     end
   end
 end
