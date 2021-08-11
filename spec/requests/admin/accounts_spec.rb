@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Admin::Accounts", type: :request do
+RSpec.describe "Admin::AccountsController", type: :request do
   describe "GET /index" do
     before do
       create(:account)
