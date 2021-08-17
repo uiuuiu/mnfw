@@ -17,6 +17,7 @@
 
 #### APi
 - Access to: http://localhost:3000/api for API
+- Import `MNFW.postman_collection.json` to Postman for using API
 
 ### How to test
 - Run `bundle exec rspec` to run all unit tests
