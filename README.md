@@ -24,3 +24,5 @@
 ### Next
 - Update Rspec to cover all features
 - Add simple-cov for checking file coverage
+- Add rubocop for applying coding convention
+ 
