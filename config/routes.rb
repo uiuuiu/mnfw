@@ -8,4 +8,13 @@ Rails.application.routes.draw do
     resources :accounts
     resources :transactions
   end
+
+  namespace :api do
+    post 'authenticate', to: 'authentication#authenticate'
+    resources :users, param: :user_id do
+      member do
+        resources :transactions
+      end
+    end
+  end
 end
