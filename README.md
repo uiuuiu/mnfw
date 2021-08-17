@@ -1,24 +1,26 @@
-# README
+### Requirements
+- Ruby: 3.0.1
+- Rails: 6.1.4
+- Postgresql: 13.3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### How to run
 
-Things you may want to cover:
+1. `bundle install`
+2. `rails db:create`
+3. `rails db:migrate`
+4. `rails s`
 
-* Ruby version
+### How to use
 
-* System dependencies
+#### Admin
+- Access to: http://localhost:3000/admin for admin page
 
-* Configuration
+#### APi
+- Access to: http://localhost:3000/api for API
 
-* Database creation
+### How to test
+- Run `bundle exec rspec` to run all unit tests
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Next
+- Update Rspec to cover all features
+- Add simple-cov for checking file coverage
